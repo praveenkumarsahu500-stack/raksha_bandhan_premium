@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raksha Bandhan Premium - Celebrate the Bond of Love</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #d4af37;
+            --secondary-color: #c41e3a;
+            --accent-color: #ffd700;
+            --dark-bg: #1a1a2e;
+            --light-text: #f0f0f0;
+            --saffron: #ff9933;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #16213e 100%);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--saffron) 50%, var(--secondary-color) 100%);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 10px var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--saffron));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .about h2 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* Music Player Section */
+        .music-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .music-player {
+            background: rgba(196, 30, 58, 0.1);
+            border: 2px solid var(--secondary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: translateY(-5px);
+        }
+
+        .music-player audio {
+            width: 100%;
+            max-width: 500px;
+            margin: 1rem 0;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: var(--secondary-color);
+        }
+
+        .music-info {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid var(--primary-color);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 12px 48px rgba(212, 175, 55, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px var(--primary-color);
+        }
+
+        .close {
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            color: var(--accent-color);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .close:hover {
+            transform: scale(1.2);
+        }
+
+        /* Celebration Message */
+        .celebration {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--saffron));
+            border-radius: 15px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+        }
+
+        .celebration h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .celebration p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        footer p {
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .celebration h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Decorative Elements */
+        .flower {
+            display: inline-block;
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🎀 Raksha Bandhan</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>🎉 Raksha Bandhan Premium 🎉</h1>
+        <p>Celebrating the Sacred Bond Between Siblings</p>
+        <div class="tagline">
+            <span class="flower">🌸</span>
+            A Festival of Love, Care, and Protection
+            <span class="flower">🌸</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Raksha Bandhan</h2>
+        <p>
+            Raksha Bandhan is one of the most significant festivals celebrated across India and by Indians worldwide. 
+            The word "Raksha" means protection and "Bandhan" means to tie. It is a festival that celebrates the special 
+            bond between brothers and sisters. On this auspicious day, sisters tie a sacred thread called "Rakhi" on their 
+            brothers' wrists as a symbol of love, care, and prayers for their well-being. In return, brothers pledge to 
+            protect and support their sisters throughout their lives.<br><br>
+            This premium celebration captures the essence of this beautiful festival with cherished memories and melodious music 
+            that resonates with the spirit of togetherness and love.
+        </p>
+    </section>
+
+    <!-- Music Player Section -->
+    <section id="music" class="music-section">
+        <h2 class="section-title">🎵 Festive Music 🎵</h2>
+        <div class="music-player">
+            <div class="music-info">♪ Raksha Bandhan - Devotional Song ♪</div>
+            <audio controls>
+                <source src="music/raksha-bandhan.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p style="margin-top: 1rem; color: #bbb; font-size: 0.95rem;">
+                Enjoy the beautiful melody of Raksha Bandhan while celebrating this sacred bond.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">📸 Memories Gallery 📸</h2>
+        <div class="gallery-container">
+            <div class="gallery-item" onclick="openModal('photos/photo1.jpg')">
+                <img src="photos/photo1.jpg" alt="Raksha Bandhan Celebration 1">
+                <div class="gallery-overlay">Click to Expand</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('photos/photo2.jpg')">
+                <img src="photos/photo2.jpg" alt="Raksha Bandhan Celebration 2">
+                <div class="gallery-overlay">Click to Expand</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('photos/photo3.jpg')">
+                <img src="photos/photo3.jpg" alt="Raksha Bandhan Celebration 3">
+                <div class="gallery-overlay">Click to Expand</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Image Expansion -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Expanded Image">
+        </div>
+    </div>
+
+    <!-- Celebration Message -->
+    <section class="celebration">
+        <h2>Wishing You a Joyful Raksha Bandhan! 🌺</h2>
+        <p>
+            May this festival strengthen the bond of love and trust between you and your loved ones. 
+            Let this celebration be a reminder of the beautiful relationship that keeps us connected forever.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>💝 Raksha Bandhan Premium © 2024 | Celebrating Love & Protection 💝</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8);">
+            Made with ❤️ for the celebration of sibling bonds
+        </p>
+    </footer>
+
+    <script>
+        // Modal Functions
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
